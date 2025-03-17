@@ -69,7 +69,7 @@ def patient_normalise(data):
         raise ValueError('Inflammation values should not be NaN')
 
     max_ = np.max(data, axis=1)
-    with np.errstate(divide='ignore'):
+    with np.errstate(invalid='ignore',divide='ignore'):
         normalised = data / max_[:, np.newaxis]
 
     # NaN should still be produced in a patient's inflammation is all zero
