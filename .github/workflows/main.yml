@@ -9,20 +9,20 @@ jobs:
 
     runs-on: ${{ matrix.os }}
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-      - name: Set up Python "${{ matrix.python-version }}
-        uses: actions/setup-python@v5
-        with:
-          python-version: "${{ matrix.python-version }}
+    - name: Set up Python "${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: "${{ matrix.python-version }}
 
-      - name: Install Python deps
-        run: |
-          python3 -m pip install --upgrade pip
-          python3 -m pip install -r requirements.txt
+    - name: Install Python deps
+      run: |
+        python3 -m pip install --upgrade pip
+        python3 -m pip install -r requirements.txt
 
-      - name: Test with pytest
-        run: |
-          python -m pytest --cov=inflammation.models tests/test_models.py
+    - name: Test with pytest
+      run: |
+        python -m pytest --cov=inflammation.models tests/test_models.py
 
