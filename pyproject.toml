@@ -1,11 +1,23 @@
-[build-system]
-requires = ["setuptools"]
-build-backend = "setuptools.build_meta"
-
 [project]
-name = "python-intermediate-inflammation"
-version = "0.0.0"
-requires-python = ">=3.9"
+name = "inflammation"
+version = "1.0.0"
+description = "analyse patient inflammation data"
+authors = [
+    {name = "Matthew Falcone",email = "mapfalcone@gmail.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "matplotlib (>=3.10.1,<4.0.0)",
+    "numpy (>=2.2.4,<3.0.0)"
+]
 
-[tool.setuptools]
-packages = ["inflammation"]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+pylint = "^3.3.6"
+

@@ -16,3 +16,6 @@
 # virtual environments
 venv/
 .venv/
+
+# python build info
+dist/
