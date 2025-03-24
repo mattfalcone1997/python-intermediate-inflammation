@@ -33,6 +33,17 @@ def daily_min(data):
     return np.min(data, axis=0)
 
 
-def s_dev(data):
-    """Computes and returns standard deviation for data."""
+def standard_deviation(data):
+    """Computes and returns standard deviation for data.
+
+    Parameters
+    ----------
+    data : np.ndarray
+        inflamamation data
+
+    Returns
+    -------
+    Dict[str, float]
+        Standard deviation of inflammation data.
+    """
     return {'standard deviation': np.std(data)}
